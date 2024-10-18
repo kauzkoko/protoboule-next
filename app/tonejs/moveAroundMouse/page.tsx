@@ -27,8 +27,8 @@ export default function SpatialAudioPage() {
 
   useEffect(() => {
     if (audio && mouse.elX !== null && ref.current) {
-      // Map mouse.elX (0 to element width) to audio position (-1 to 1)
-      const mappedX = (mouse.elX / ref.current.clientWidth) * 2 - 1;
+      // Map mouse.elX (0 to element width) to audio position (-100 to 100)
+      const mappedX = (mouse.elX / ref.current.clientWidth) * 200 - 100;
       audio.panner.positionX.setValueAtTime(mappedX, Tone.now());
       console.log('Updated panner position:', mappedX);
     }

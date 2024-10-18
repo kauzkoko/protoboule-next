@@ -13,7 +13,8 @@ declare global {
   }
 }
 
-export default function StrudelClient() {
+export default function StrudelClient() {`\'][
+  ]`
   const strudelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

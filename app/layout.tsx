@@ -28,6 +28,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans`}
       >
+        <a href="/" className="fixed top-4 left-4 p-2 font-bold text-lg bg-red-100 rounded-full w-12 h-12 flex items-center justify-center hover:bg-red-200 transition-colors z-50">
+          <span className="whitespace-nowrap">ㅐㅇㅆㅌ</span>
+        </a>
         <div className="mx-auto max-w-2xl px-4 pt-8">
           <div className="border border-solid border-red-100 pt-4 px-6 pb-6">
             {children}
