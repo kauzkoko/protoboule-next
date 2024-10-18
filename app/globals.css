@@ -1,3 +1,9 @@
+@layer base {
+  html {
+    font-family: var(--font-geist-sans), system-ui, sans-serif;
+  }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
