@@ -1,11 +1,9 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import { Howl, Howler } from 'howler';
+import { Howl } from 'howler';
 
 const AudioPlayerWith3D = () => {
-  const soundRef = useRef(null);
-
   useEffect(() => {
     const sound = new Howl({
       src: ['/doorbell.mp3'], // Update path to be relative to the public directory
