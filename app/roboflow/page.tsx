@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { InferenceEngine } from "inferencejs";
 
-export default function RoboflowPage() {
+const RoboflowPage = () => {
   const [imageUrl, setImageUrl] = useState('/soll.jpeg');
   const [predictions, setPredictions] = useState([]);
   const canvasRef = useRef(null);
@@ -20,9 +20,10 @@ export default function RoboflowPage() {
       const img = document.getElementById("image") as HTMLImageElement;
       if (img && img.complete) {
         const canvas = canvasRef.current;
-        const ctx = canvas.getContext('2d');
-        canvas.width = img.width;
-        canvas.height = img.height;
+        // Add a type assertion here
+        const ctx = (canvas as HTMLCanvasElement).getContext('2d')!;
+        (canvas as HTMLCanvasElement).width = img.width;
+        (canvas as HTMLCanvasElement).height = img.height;
         ctx.drawImage(img, 0, 0, img.width, img.height);
 
         const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -57,4 +58,6 @@ export default function RoboflowPage() {
       )}
     </div>
   );
-}
+};
+
+export default RoboflowPage;
